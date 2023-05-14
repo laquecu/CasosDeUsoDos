@@ -37,5 +37,28 @@ end note
 note "actores descendientes" as n1
 :Cliente Corporativo: <- n1
 n1 -> :Cliente Normal:
+@enduml
+@startuml
+rectangle Empresa_Pedidos{
+(Introducir\nPedido) as u1
+(Cancelar\Pedido) as u2
+(Obtener Estado\nPedido) as u3
+(Borrar Pedido) as u4
+(Buscar Pedidos) as u5
+(Alta Cliente) as u6
+(Buscar Cliente) as u7
+(Nuevo\nProducto) as u8
+(Borrar Producto) as u9
+}
+left to right direction
+Empleado -- u1
+Empleado -- u2
+Empleado -- u3
+Empleado -- u4
+Empleado -- u5
+Empleado -- u6
+Empleado -- u7
+u8 -- Administrador
+u9 -- Administrador
 
 @enduml
