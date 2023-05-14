@@ -62,3 +62,27 @@ u8 -- Administrador
 u9 -- Administrador
 
 @enduml
+@startuml
+
+(Alta Cliente) as u6
+(Introducir\nPedido) as u1
+(Cancelar\nPedido) as u2
+(Obtener\nEstado\nPedido) as u3
+(Buscar\nPedidos) as u5
+(Buscar\nCliente) as u7
+(Pago con\ntarjeta) as u10
+(Pago en\ncuenta) as u11
+left to right direction
+Empleado -- u1
+Empleado -- u2
+Empleado -- u3
+Empleado -- u5
+Empleado -- u6
+u6 .> u1 : extiende
+u1 ..> u7 : incluye
+u1 <.. u10 : extiende
+u1 <.. u11 : extiende
+u3 ..> u5 : incluye
+u2 ..> u5 : incluye
+
+@enduml
