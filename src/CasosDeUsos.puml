@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+rectangle Biblioteca {
+(Reservar\nLibro) as U1
+(Prestar\nLibro) as U2
+(Devolver\nLibro) as U3
+(Actualizar\nCatálogo) as U4
+}
+Socio -- U1
+Socio -- U2
+Socio -- U3
+U2 -- Bibliotecario
+U4 -- Bibliotecario
+@enduml
