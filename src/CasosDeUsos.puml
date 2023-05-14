@@ -12,3 +12,30 @@ Socio -- U3
 U2 -- Bibliotecario
 U4 -- Bibliotecario
 @enduml
+@startuml
+left to right direction
+Bibliotecario -->(Baja socio)
+(Baja socio) ..> (Buscar socio) : <<include>>
+@enduml
+@startuml
+left to right direction
+Agente --> (Evaluar\nSolicitud de Crédito)
+(Evaluar\nSolicitud de Crédito)<... (Solicitar Información\nadicional al cliente) : <<extend>>
+@enduml
+@startuml
+Agente -> (Enviar solicitud\ncrédito)
+(Enviar solicitud\ncrédito)<|-- (Enviar solicitud de\ncrédito personal)
+(Enviar solicitud\ncrédito)<|-- (Enviar solicitud de\ncrédito empresarial)
+@enduml
+@startuml
+:Cliente Bancario: <|--- :Cliente Corporativo:
+:Cliente Bancario: <|--- :Cliente Normal:
+note right of :Cliente Bancario:
+"actor antecesor"
+end note
+
+note "actores descendientes" as n1
+:Cliente Corporativo: <- n1
+n1 -> :Cliente Normal:
+
+@enduml
